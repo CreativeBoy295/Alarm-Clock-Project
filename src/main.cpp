@@ -1,10 +1,16 @@
 #include <Arduino.h>
 #include <FastLED.h>
 
+
+#define NUM_LEDS  64
+#define LED_PIN   4
+
+CRGB leds[NUM_LEDS];
+
 void setup() {
-  // put your setup code here, to run once:
+  FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);
+  FastLED.setBrightness(50);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 }
